@@ -1,0 +1,17 @@
+  <header class="header">
+    <h1>Latest Updates</h1>
+  </header>
+
+  <main class="main-content">
+    <div class="posts-container">
+      <article class="post-card" *ngFor="let post of posts">
+        <div class="post-content">
+          <h2 class="post-title">{{ post.title }}</h2>
+          <p class="post-description">{{ post.description }}</p>
+        </div>
+        <button class="delete-button" (click)="deletePost(post.id)">
+          Delete
+        </button>
+      </article>
+    </div>
+  </main>

@@ -1,0 +1,121 @@
+$primary-color: #6366f1;
+$primary-hover: #4f46e5;
+$background-light: #f8fafc;
+$card-background: #ffffff;
+$text-primary: #1e293b;
+$text-secondary: #64748b;
+$border-color: #e2e8f0;
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+$border-radius: 12px;
+$spacing-unit: 1rem;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:host {
+  display: block;
+  min-height: 100vh;
+  background: linear-gradient(135deg, $background-light 0%, #e0e7ff 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header {
+  background: linear-gradient(135deg, $primary-color 0%, $primary-hover 100%);
+  padding: $spacing-unit * 2 $spacing-unit * 1.5;
+  box-shadow: $shadow-md;
+  text-align: center;
+  margin-bottom: $spacing-unit * 3;
+
+  h1 {
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  padding: 0 $spacing-unit * 1.5 $spacing-unit * 3;
+}
+
+.posts-container {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-unit * 1.5;
+  width: 100%;
+  max-width: 800px;
+}
+
+.post-card {
+  background: $card-background;
+  border-radius: $border-radius;
+  padding: $spacing-unit * 2;
+  box-shadow: $shadow-sm;
+  border: 1px solid $border-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $spacing-unit * 1.5;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: $shadow-lg;
+    transform: translateY(-2px);
+    border-color: $primary-color;
+  }
+}
+
+.post-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-unit * 0.5;
+}
+
+.post-title {
+  color: $text-primary;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: $spacing-unit * 0.25;
+}
+
+.post-description {
+  color: $text-secondary;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.delete-button {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: $spacing-unit * 0.75 $spacing-unit * 1.5;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
+  white-space: nowrap;
+
+  &:hover {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    box-shadow: 0 4px 8px rgba(239, 68, 68, 0.4);
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(239, 68, 68, 0.3);
+  }
+}
